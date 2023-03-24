@@ -23,14 +23,14 @@ namespace AviaCompany
         {
             InitializeComponent();
         }
+        AviaCompany.AviacompanyDataSetTableAdapters.UserDataTableAdapter aviacompanyDataSetUserDataTableAdapter = new AviaCompany.AviacompanyDataSetTableAdapters.UserDataTableAdapter();
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
             AviaCompany.AviacompanyDataSet aviacompanyDataSet = ((AviaCompany.AviacompanyDataSet)(this.FindResource("aviacompanyDataSet")));
             // Load data into the table UserData. You can modify this code as needed.
-            AviaCompany.AviacompanyDataSetTableAdapters.UserDataTableAdapter aviacompanyDataSetUserDataTableAdapter = new AviaCompany.AviacompanyDataSetTableAdapters.UserDataTableAdapter();
-            aviacompanyDataSetUserDataTableAdapter.Fill(aviacompanyDataSet.UserData);
+          aviacompanyDataSetUserDataTableAdapter.Fill(aviacompanyDataSet.UserData);
             System.Windows.Data.CollectionViewSource userDataViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userDataViewSource")));
             userDataViewSource.View.MoveCurrentToFirst();
         }
@@ -39,6 +39,7 @@ namespace AviaCompany
         {
             AddUser user=new AddUser();
             user.Show();
+            this.Hide();
         }
     }
 }

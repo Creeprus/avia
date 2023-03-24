@@ -24,7 +24,7 @@ namespace AviaCompany
         {
             InitializeComponent();
         }
-
+        AviaCompany.AviacompanyDataSetTableAdapters.UserDataTableAdapter aviacompanyDataSetUserDataTableAdapter = new AviaCompany.AviacompanyDataSetTableAdapters.UserDataTableAdapter();
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AviaCompany.AviacompanyDataSetTableAdapters.UserDataTableAdapter aviacompanyDataSetUserDataTableAdapter = new AviaCompany.AviacompanyDataSetTableAdapters.UserDataTableAdapter();
@@ -42,7 +42,7 @@ namespace AviaCompany
 
             AviaCompany.AviacompanyDataSet aviacompanyDataSet = ((AviaCompany.AviacompanyDataSet)(this.FindResource("aviacompanyDataSet")));
             // Load data into the table UserData. You can modify this code as needed.
-            AviaCompany.AviacompanyDataSetTableAdapters.UserDataTableAdapter aviacompanyDataSetUserDataTableAdapter = new AviaCompany.AviacompanyDataSetTableAdapters.UserDataTableAdapter();
+          
             aviacompanyDataSetUserDataTableAdapter.Fill(aviacompanyDataSet.UserData);
             System.Windows.Data.CollectionViewSource userDataViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userDataViewSource")));
             userDataViewSource.View.MoveCurrentToFirst();

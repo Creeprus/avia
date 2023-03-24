@@ -30,11 +30,9 @@ namespace AviaCompany
             aviacompanyDataSetUserDataTableAdapter.InsertQuery("User", email.Text.ToString(),password.Text.ToString(),name.Text.ToString(),surname.Text.ToString(),country.Text.ToString(),date.Text.ToString(),"0");
             this.Close();
             Admin admin = new Admin();
-
-            AviaCompany.AviacompanyDataSet aviacompanyDataSet = ((AviaCompany.AviacompanyDataSet)(this.FindResource("aviacompanyDataSet")));
-            aviacompanyDataSetUserDataTableAdapter.Fill(aviacompanyDataSet.UserData);
-            System.Windows.Data.CollectionViewSource userDataViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userDataViewSource")));
-            userDataViewSource.View.MoveCurrentToFirst();
+            admin.Show();
+            
+         
 
         }
     }
